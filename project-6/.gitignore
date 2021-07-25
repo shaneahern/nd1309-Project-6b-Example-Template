@@ -106,3 +106,4 @@ dist
 # Nanodegree proejct
 build
 .secret
+.DS_Store

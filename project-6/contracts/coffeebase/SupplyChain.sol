@@ -100,7 +100,7 @@ contract SupplyChain is Ownable {
     _;
     uint _price = items[_upc].productPrice;
     uint amountToReturn = msg.value - _price;
-    items[_upc].consumerID.transfer(amountToReturn);
+    items[_upc].distributorID.transfer(amountToReturn);
   }
 
   // Define a modifier that checks if an item.state of a upc is Harvested
@@ -283,12 +283,13 @@ contract SupplyChain is Ownable {
     require(distributors.isDistributor(msg.sender));
   
     // Update the appropriate fields - ownerID, distributorID, itemState
-    items[_upc].ownerID = msg.sender;
-    items[_upc].distributorID = msg.sender;
+    address distributorID = msg.sender;
+    items[_upc].ownerID = distributorID;
+    items[_upc].distributorID = distributorID;
     items[_upc].itemState = State.Sold;
     
     // Transfer money to farmer
-    items[_upc].originFarmerID.transfer(msg.value);
+    items[_upc].originFarmerID.transfer(items[_upc].productPrice);
 
     // emit the appropriate event
     emit Sold(_upc);
@@ -321,8 +322,9 @@ contract SupplyChain is Ownable {
     require(retailers.isRetailer(msg.sender));
     
     // Update the appropriate fields - ownerID, retailerID, itemState
-    items[_upc].ownerID = msg.sender;
-    items[_upc].retailerID = msg.sender;
+    address retailerID = msg.sender;
+    items[_upc].ownerID = retailerID;
+    items[_upc].retailerID = retailerID;
     items[_upc].itemState = State.Received;
     
     // Emit the appropriate event
@@ -339,8 +341,9 @@ contract SupplyChain is Ownable {
     require(consumers.isConsumer(msg.sender));
   
     // Update the appropriate fields - ownerID, consumerID, itemState
-    items[_upc].ownerID = msg.sender;
-    items[_upc].consumerID = msg.sender;
+    address consumerID = msg.sender;
+    items[_upc].ownerID = consumerID;
+    items[_upc].consumerID = consumerID;
     items[_upc].itemState = State.Purchased;
     
     // Emit the appropriate event
