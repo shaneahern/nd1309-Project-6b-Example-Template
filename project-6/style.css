@@ -64,3 +64,15 @@ button {
 .horizontal-rule {
   background-color:#BDBDBD;
 }
+
+#ftc-tranactions {
+  border:1px solid red;
+  position: fixed;
+  width:40%;
+  bottom:10px;
+  top:180px;
+  right:10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding:10px;
+}

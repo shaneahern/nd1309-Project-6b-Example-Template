@@ -40,14 +40,16 @@ contract('SupplyChain', function(accounts) {
     console.log("Distributor: accounts[2] ", accounts[2])
     console.log("Retailer: accounts[3] ", accounts[3])
     console.log("Consumer: accounts[4] ", accounts[4])
+    
+    it("Registers roles", async() => {        
+        const supplyChain = await SupplyChain.deployed()
+        supplyChain.registerRoles(originFarmerID, distributorID, retailerID, consumerID);
+    })
 
     // 1st Test
     it("Testing smart contract function harvestItem() that allows a farmer to harvest coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
 
-        // supplyChain.registerAsFarmer();
-        
-        supplyChain.registerAsFarmer({from: originFarmerID});
         await supplyChain.transferOwnership(originFarmerID, {from: ownerID});
         
         // Declare and Initialize a variable for event
@@ -174,7 +176,7 @@ contract('SupplyChain', function(accounts) {
     it("Testing smart contract function buyItem() that allows a distributor to buy coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
 
-        supplyChain.registerAsDistributor({from: distributorID});
+        // supplyChain.registerAsDistributor({from: distributorID});
         await supplyChain.transferOwnership(distributorID, {from: originFarmerID});;
         
         // Declare and Initialize a variable for event
@@ -234,7 +236,7 @@ contract('SupplyChain', function(accounts) {
     it("Testing smart contract function receiveItem() that allows a retailer to mark coffee received", async() => {
         const supplyChain = await SupplyChain.deployed()
 
-        supplyChain.registerAsRetailer({from: retailerID});
+        // supplyChain.registerAsRetailer({from: retailerID});
         await supplyChain.transferOwnership(retailerID, {from: distributorID});
         
         
@@ -267,7 +269,7 @@ contract('SupplyChain', function(accounts) {
     it("Testing smart contract function purchaseItem() that allows a consumer to purchase coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
 
-        supplyChain.registerAsConsumer({from: consumerID});
+        // supplyChain.registerAsConsumer({from: consumerID});
         await supplyChain.transferOwnership(consumerID, {from: retailerID});
         
         // Declare and Initialize a variable for event

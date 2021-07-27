@@ -164,20 +164,11 @@ contract SupplyChain is Ownable {
     retailers = new RetailerRole();
   }
 
-  function registerAsFarmer() public {
-    farmers.addFarmer(msg.sender);
-  }
-
-  function registerAsDistributor() public {
-    distributors.addDistributor(msg.sender);
-  }
-
-  function registerAsRetailer() public {
-    retailers.addRetailer(msg.sender);
-  }
-
-  function registerAsConsumer() public {
-    consumers.addConsumer(msg.sender);
+  function registerRoles(address farmer, address distributor, address retailer, address consumer) public {
+    farmers.addFarmer(farmer); 
+    distributors.addDistributor(distributor);
+    retailers.addRetailer(retailer);
+    consumers.addConsumer(consumer);
   }
 
   // Define a function 'kill' if required

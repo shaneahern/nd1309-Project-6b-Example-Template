@@ -42,8 +42,10 @@ contract RetailerRole {
 
   // Define an internal function '_addRetailer' to add this role, called by 'addRetailer'
   function _addRetailer(address account) internal {
-    retailers.add(account);
-    emit RetailerAdded(account);
+    if (!isRetailer(account)) {
+      retailers.add(account);
+      emit RetailerAdded(account);
+    }
   }
 
   // Define an internal function '_removeRetailer' to remove this role, called by 'removeRetailer'

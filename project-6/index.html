@@ -18,30 +18,111 @@
         <p style="text-align: center;">Prove the authenticity of coffee using the Ethereum blockchain.</p>
     </div>
 
-    <div id="ftc-harvest">
-        <h2>Product Overview</h2>
-        <div class="form-group">
-            SKU
-            <br>
-            <input class="input-field" type="number" id="sku" name="sku" value=1><br>
-            UPC
-            <br>
-            <input type="number" id="upc" name="upc" value=1><br>
-            Current Owner ID
-            <br>
-            <input type="text" id="ownerID" name="ownerID" value="0x963865f57804b38459dd4b2da2f760211a200438" size="50"><br>
-            <div class=button-div>
-                <button class="btn-fetchOne" id="button" type="button" data-id="9">Fetch Data 1</button>
-                <button class="btn-fetchTwo" id="button" type="button" data-id="10">Fetch Data 2</button>
+    <div id="ftc-tranactions">
+        <div id="ftc-transaction-detail">
+            <div id="ftc-current-account">
+                <h2>Current Metamask Account<span id="ftc-history"></span></h2>
+                <div id="ftc-account">
+                    <!-- Current Metamask Account appear here from app.js -->
+                </div>
+            </div>
+            <h2>Product</span></h2>
+            <div>
+                <div id="ftc-product-description">
+                <!-- Product detail will appear here from app.js -->
+                </div>
+            </div>
+            <h2>Transaction History<span id="ftc-history"></span></h2>
+            <div>
+                <ul id="ftc-events">
+                    <!-- Events will appear here from app.js -->
+                </ul>
+                <br>
+                <hr>
             </div>
         </div>
-        <div class=form-break></div>
-        <h2>Farm Details</h2>
+    </div>    
+
+    <div>
+        <h2>Product Lookup</h2>
+        <div class="form-group">
+            UPC
+            <br>
+            <input type="number" id="upc" name="upc" value=1>
+            <div class=button-div>
+                <button class="btn-fetchProduct" id="button" type="button" data-id="9">Fetch Product</button>
+                <div>Will create new product if none exists.</div>                
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h2>Farm</h2>
+        <div>
+            <div id="ftc-farmer-name" />
+            <!-- Product detail will appear here from app.js -->
+            </div>
+            <br>
+            <div id="ftc-farm-info" />
+            <!-- Product detail will appear here from app.js -->
+            </div>
+            <div id="ftc-farm-location" />
+            <!-- Product detail will appear here from app.js -->
+            </div>
+        </div>
+    </div>
+    <div id="ftc-roles">
+        <!-- localhost addresses -->
+        <!-- <h2>Roles</h2>
         <div class="form-group">
             Farmer ID
             <br>
-            <input type="text" id="originFarmerID" name="originFarmerID" value="0x99c289eb2aacec289631a5ddf62cf27a63d4494f"
+            <input type="text" id="originFarmerID" name="originFarmerID" value="0xEe7B6cBaFB14cb5cDa8aD3c11c5D573dcC9e7165"
                 size="50"><br>
+            Distributor ID
+            <br>
+            <input type="text" id="distributorID" name="distributorID" value="0xe0c47B7362222c905b12F9F759f860B3FFEe8ABE"
+                size="50">
+            <br>
+            Retailer ID
+            <br>
+            <input type="text" id="retailerID" name="retailerID" value="0xC5935C48C6d8AB6Bd275c7D6dDfB5D8B9D690dA1"
+                size="50"><br>
+            Consumer ID
+            <br>
+            <input type="text" id="consumerID" name="consumerID" value="0x4fd489b016cDD4A51db7f6c45E8F5C10333d5DD9"
+                size="50"><br>
+            <br>
+            <button class="btn-register-roles" id="button" type="button" data-id="15">Register Roles</button>    
+            <br>
+        </div> -->
+        <!-- Rinkeby addresses -->
+        <h2>Roles</h2>
+        <div class="form-group">
+            Farmer ID
+            <br>
+            <input type="text" id="originFarmerID" name="originFarmerID" value="0xe593D2485A9015fbCB65F6098072effe98d8520C"
+                size="50"><br>
+            Distributor ID
+            <br>
+            <input type="text" id="distributorID" name="distributorID" value="0xD191CCfBF8715414E56C623e28D964Efc15Ed46D"
+                size="50">
+            <br>
+            Retailer ID
+            <br>
+            <input type="text" id="retailerID" name="retailerID" value="0x595ceD4D538d6F9ab1f0EC82Cc88143E57a9024f"
+                size="50"><br>
+            Consumer ID
+            <br>
+            <input type="text" id="consumerID" name="consumerID" value="0x54D0777Ff0F4a3100360e0cD4f0034d130025a36"
+                size="50"><br>
+            <br>
+            <button class="btn-register-roles" id="button" type="button" data-id="15">Register Roles</button>    
+            <br>
+        </div>
+        <div class=form-break></div>
+        <div id="farmer-role"><h2>Farmer</h2></div>
+        <div class="form-group">
             Farm Name
             <br>
             <input type="text" id="originFarmName" name="originFarmName" value="John Doe"><br>
@@ -55,7 +136,9 @@
             <br>
             <input type="text" id="originFarmLongitude" name="originFarmLongitude" value="144.341490"><br>
             <br>
-            <button class="btn-register-farmer" id="button" type="button" data-id="11">Register as Farmer</button>
+            Product Price
+            <br>
+            <input type="number" id="productPrice" name="productPrice" value="1.5">ETH<br>
             <br>
             <button class="btn-harvest" id="button" type="button" data-id="1">Harvest</button>
             <button class="btn-process" id="button" type="button" data-id="2">Process</button>
@@ -63,54 +146,25 @@
             <button class="btn-forsale" id="button" type="button" data-id="4">ForSale</button>
         </div>
         <div class=form-break></div>
-        <h2>Product Details</h2>
+        <div id="distributor-role"><h2>Distributor</h2></div>
         <div class="form-group">
             Product Notes
             <br>
             <input type="text" id="productNotes" name="productNotes" value="Best beans for Espresso" size="60"><br>
-            Product Price
-            <br>
-            <input type="number" id="productPrice" name="productPrice" value=1.5>ETH<br>
-            Distributor ID
-            <br>
-            <input type="text" id="distributorID" name="distributorID" value="0xf1b1bcd24dad92303dd9fe78be639f7bcf9c238d"
-                size="50">
-            <br>
-            Retailer ID
-            <br>
-            <input type="text" id="retailerID" name="retailerID" value="0x0fb2bfefd526966c87efa19f6693d50971763fc2"
-                size="50"><br>
-            Distributor ID
-            <br>
-            <input type="text" id="consumerID" name="consumerID" value="0x5d777e9127b28fb119e81a6304278a0a21bef1c4"
-                size="50"><br>
-            <br>
-            <button class="btn-register-distributor" id="button" type="button" data-id="12">Register as Distributor</button>    
-            <br>
             <button class="btn-buy" id="button" type="button" data-id="5">Buy</button>
             <button class="btn-ship" id="button" type="button" data-id="6">Ship</button>
-            <br>
-            <br>
-            <button class="btn-register-retailer" id="button" type="button" data-id="13">Register as Retailer</button>
-            <br>
+        </div>
+        <div class=form-break></div>
+        <div id="retailer-role"><h2>Retailer</h2></div>
+        <div class="form-group">
             <button class="btn-receive" id="button" type="button" data-id="7">Receive</button>
-            <br>
-            <br>
-            <button class="btn-register-consumer" id="button" type="button" data-id="14">Register as Consumer</button>
-            <br>
+        </div>
+        <div class=form-break></div>
+        <div id="consumer-role"><h2>Consumer</h2></div>
+        <div class="form-group">
             <button class="btn-purchase" id="button" type="button" data-id="8">Purchase</button>
         </div>
-
         <div class=form-break></div>
-        <hr>
-    </div>
-
-    <h2>Transaction History<span id="ftc-history"></span></h2>
-    <div>
-        <ul id="ftc-events">
-            <!-- Events will appear here from app.js -->
-        </ul>
-        <br>
         <hr>
     </div>
 
