@@ -1,8 +1,13 @@
-const HDWalletProvider = require('truffle-hdwallet-provider');
-const infuraKey = "a9d4cef8ce8c45018e060cdcca0d13c0";
+// To deploy to rinkeby test network, uncomment lines below
+// - add your infura key
+// - create a local file named .secret with the mnemonic for 
+// your infura project
 
-const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+// const HDWalletProvider = require('truffle-hdwallet-provider');
+// const infuraKey = "<your infura key";
+
+// const fs = require('fs');
+// const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   networks: {

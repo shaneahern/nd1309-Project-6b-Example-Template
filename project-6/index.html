@@ -43,6 +43,35 @@
         </div>
     </div>    
 
+    <h2>Roles</h2>
+    <div>
+        Enter a Metamask wallet address for each role and click "Register Roles"
+        to get started.
+    </div>
+    <div class="form-group">
+        Farmer ID
+        <br>
+        <input type="text" id="originFarmerID" name="originFarmerID" value=""
+            size="50"><br>
+        Distributor ID
+        <br>
+        <input type="text" id="distributorID" name="distributorID" value=""
+            size="50">
+        <br>
+        Retailer ID
+        <br>
+        <input type="text" id="retailerID" name="retailerID" value=""
+            size="50"><br>
+        Consumer ID
+        <br>
+        <input type="text" id="consumerID" name="consumerID" value=""
+            size="50"><br>
+        <br>
+        <button class="btn-register-roles" id="button" type="button" data-id="15">Register Roles</button>    
+        <br>
+    </div>
+    <div class=form-break></div>    
+
     <div>
         <h2>Product Lookup</h2>
         <div class="form-group">
@@ -51,7 +80,7 @@
             <input type="number" id="upc" name="upc" value=1>
             <div class=button-div>
                 <button class="btn-fetchProduct" id="button" type="button" data-id="9">Fetch Product</button>
-                <div>Will create new product if none exists.</div>                
+                <div>Will create new product on harvest if none exists.</div>                
             </div>
         </div>
     </div>
@@ -72,55 +101,6 @@
         </div>
     </div>
     <div id="ftc-roles">
-        <!-- localhost addresses -->
-        <!-- <h2>Roles</h2>
-        <div class="form-group">
-            Farmer ID
-            <br>
-            <input type="text" id="originFarmerID" name="originFarmerID" value="0xEe7B6cBaFB14cb5cDa8aD3c11c5D573dcC9e7165"
-                size="50"><br>
-            Distributor ID
-            <br>
-            <input type="text" id="distributorID" name="distributorID" value="0xe0c47B7362222c905b12F9F759f860B3FFEe8ABE"
-                size="50">
-            <br>
-            Retailer ID
-            <br>
-            <input type="text" id="retailerID" name="retailerID" value="0xC5935C48C6d8AB6Bd275c7D6dDfB5D8B9D690dA1"
-                size="50"><br>
-            Consumer ID
-            <br>
-            <input type="text" id="consumerID" name="consumerID" value="0x4fd489b016cDD4A51db7f6c45E8F5C10333d5DD9"
-                size="50"><br>
-            <br>
-            <button class="btn-register-roles" id="button" type="button" data-id="15">Register Roles</button>    
-            <br>
-        </div> -->
-        <!-- Rinkeby addresses -->
-        <h2>Roles</h2>
-        <div class="form-group">
-            Farmer ID
-            <br>
-            <input type="text" id="originFarmerID" name="originFarmerID" value="0xe593D2485A9015fbCB65F6098072effe98d8520C"
-                size="50"><br>
-            Distributor ID
-            <br>
-            <input type="text" id="distributorID" name="distributorID" value="0xD191CCfBF8715414E56C623e28D964Efc15Ed46D"
-                size="50">
-            <br>
-            Retailer ID
-            <br>
-            <input type="text" id="retailerID" name="retailerID" value="0x595ceD4D538d6F9ab1f0EC82Cc88143E57a9024f"
-                size="50"><br>
-            Consumer ID
-            <br>
-            <input type="text" id="consumerID" name="consumerID" value="0x54D0777Ff0F4a3100360e0cD4f0034d130025a36"
-                size="50"><br>
-            <br>
-            <button class="btn-register-roles" id="button" type="button" data-id="15">Register Roles</button>    
-            <br>
-        </div>
-        <div class=form-break></div>
         <div id="farmer-role"><h2>Farmer</h2></div>
         <div class="form-group">
             Farm Name
