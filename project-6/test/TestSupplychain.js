@@ -43,7 +43,11 @@ contract('SupplyChain', function(accounts) {
     
     it("Registers roles", async() => {        
         const supplyChain = await SupplyChain.deployed()
-        supplyChain.registerRoles(originFarmerID, distributorID, retailerID, consumerID);
+        await supplyChain.registerRoles(originFarmerID, distributorID, retailerID, consumerID);
+        assert.equal(await supplyChain.isFarmer.call(originFarmerID), true, "Farmer role failed to register");
+        assert.equal(await supplyChain.isDistributor.call(distributorID), true, "Distributor role failed to register");
+        assert.equal(await supplyChain.isRetailer.call(retailerID), true, "Retailer role failed to register");
+        assert.equal(await supplyChain.isConsumer.call(consumerID), true, "Consumer role failed to register");
     })
 
     // 1st Test
@@ -176,7 +180,6 @@ contract('SupplyChain', function(accounts) {
     it("Testing smart contract function buyItem() that allows a distributor to buy coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
 
-        // supplyChain.registerAsDistributor({from: distributorID});
         await supplyChain.transferOwnership(distributorID, {from: originFarmerID});;
         
         // Declare and Initialize a variable for event
@@ -236,7 +239,6 @@ contract('SupplyChain', function(accounts) {
     it("Testing smart contract function receiveItem() that allows a retailer to mark coffee received", async() => {
         const supplyChain = await SupplyChain.deployed()
 
-        // supplyChain.registerAsRetailer({from: retailerID});
         await supplyChain.transferOwnership(retailerID, {from: distributorID});
         
         
@@ -269,7 +271,6 @@ contract('SupplyChain', function(accounts) {
     it("Testing smart contract function purchaseItem() that allows a consumer to purchase coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
 
-        // supplyChain.registerAsConsumer({from: consumerID});
         await supplyChain.transferOwnership(consumerID, {from: retailerID});
         
         // Declare and Initialize a variable for event
