@@ -2,13 +2,35 @@
 
 This repository containts an Ethereum DApp that demonstrates a Supply Chain flow between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
 
+## Install and Run DApp on http://localhost:8080
+Ensure [Ganache](https://www.trufflesuite.com/ganache) is running on port 7545 (or update port in truffle.js)
+```
+git clone https://github.com/shaneahern/nd1309-Project-6b-Example-Template.git
+
+cd nd1309-Project-6b-Example-Template/project-6
+
+npm install
+
+npm audit fix
+
+truffle migrate
+
+npm run dev
+```
+Ensure your Metamask plugin is connected to the network on http://localhost:7545
+
+DApp is running at http://localhost:8080/
+
 ## Libraries
 - Truffle v4.1.14
 - Solidity v0.4.24
-- @truffle/contract v4.3.25
-- web3 v0.20.6
-- webpack v4.46.0
-- jquery.js v1.12.4
+- @truffle/contract@4.3.26
+- copy-webpack-plugin@4.6.0
+- lite-server@2.6.1
+- web3@0.20.6
+- webpack-cli@3.3.12
+- webpack-dev-server@3.11.2
+- webpack@4.46.0
 
 ## Tools
 - ipfs v0.9.0
