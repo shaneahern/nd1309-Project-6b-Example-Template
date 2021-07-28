@@ -44,8 +44,8 @@ I used [IPFS](https://ipfs.io/) to host my DApp and make it pubically accessible
 My DApp is available at https://gateway.ipfs.io/ipns/k51qzi5uqu5dkzi7wg4bxvofm9fw2kf8ry06wkmwdyle5ehbq5p2luh71pqb94/
 
 ## Contract Deployment on the Rinkeby Test Network
-* The contract SupplyChain.sol is deployed to the Rinkeby test network at 0x4A13Fc3541b874190087D49BC6A9Dbe6a780369C
-* You can view the SupplyChain contract deployment information transaction history at https://rinkeby.etherscan.io/address/0x4A13Fc3541b874190087D49BC6A9Dbe6a780369C
+* The contract SupplyChain.sol is deployed to the Rinkeby test network at 0x49E265074F8A53B4c3ee74b3f8AE6211B9B31334
+* You can view the SupplyChain contract deployment information transaction history at https://rinkeby.etherscan.io/address/0x49E265074F8A53B4c3ee74b3f8AE6211B9B31334
 * I also deployed contracts for each role used in SupplyChain.sol (FarmerRole.sol, DistributorRole.sol, RetailerRole.sol, and ConsumerRole.sol) as well as an interface contract Ownable.sol that is implemented by SupplyChain.sol to control ownership of the contract.
 
 ## UML Diagrams
