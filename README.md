@@ -51,8 +51,8 @@ My DApp is available at https://gateway.ipfs.io/ipns/k51qzi5uqu5dkzi7wg4bxvofm9f
 ## UML Diagrams
 ![image](https://user-images.githubusercontent.com/76200/127243424-63440538-2041-479b-8fc1-a60e98abe7ee.png)
 ![image](https://user-images.githubusercontent.com/76200/127243989-0e0dd203-de54-4502-8d2b-4659f7b87099.png)
-![image](https://user-images.githubusercontent.com/76200/127243572-7b95435f-687f-4099-902f-4d341e193a25.png)
-![image](https://user-images.githubusercontent.com/76200/127243756-8842ae7e-49ce-4848-9d67-e59445559197.png)
+![image](https://user-images.githubusercontent.com/76200/127375665-49059176-9642-48e3-9a8a-07fafc519a29.png)
+![image](https://user-images.githubusercontent.com/76200/127376242-9bb7bb89-4888-443f-a130-28c1a1df78d0.png)
 
 ## Testing the DApp
 * The project includes unit tests written with [Mocha](https://mochajs.org/) testing framework and [Chai](https://www.chaijs.com/) for assertions in TestSupplyChain.js that can be run as ```truffle test```
