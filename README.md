@@ -57,10 +57,10 @@ My DApp is available at https://gateway.ipfs.io/ipns/k51qzi5uqu5dkzi7wg4bxvofm9f
 ## Testing the DApp
 * The project includes unit tests written with [Mocha](https://mochajs.org/) testing framework and [Chai](https://www.chaijs.com/) for assertions in TestSupplyChain.js that can be run as ```truffle test```
 
-## Using the DApp
+## Using the DApp hosted on IPFS
 * To use the DApp, you should have the [Metamask browser plugin](https://metamask.io/) connected to the Rinkeby test network and be set up with four accounts, each containing sufficient ETH for transactions. You can get free test ETH to use on the Rinekby test network at https://faucet.rinkeby.io/
 
-* Navigate to https://gateway.ipfs.io/ipns/k51qzi5uqu5dkzi7wg4bxvofm9fw2kf8ry06wkmwdyle5ehbq5p2luh71pqb94/
+* Navigate to https://gateway.ipfs.io/ipns/k51qzi5uqu5dkzi7wg4bxvofm9fw2kf8ry06wkmwdyle5ehbq5p2luh71pqb94
 
 The DApp User Interface when running should look like...
 
